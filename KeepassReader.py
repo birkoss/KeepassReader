@@ -76,14 +76,8 @@ class KeepassReader(object):
 			data_size = int.from_bytes(content[36:40], 'little')
 			block_data = content[40:40 + data_size]
 
-			if data_size > 0:
-				#print("Block ID: %s" % block_id)
-				#print("Block Hash: %s" % block_hash)
-				#print("Data Size: %d" % data_size)
-				#print("Block Data: %s" % hashlib.sha256(block_data).digest())
-
-				if hashlib.sha256(block_data).digest() == block_hash:
-					xml += block_data
+			if data_size > 0 and hashlib.sha256(block_data).digest() == block_hash:
+				xml += block_data
 
 			content = content[40 + data_size:]
 
