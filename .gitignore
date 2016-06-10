@@ -1,0 +1,4 @@
+*.kdbx
+*.swp
+__pycache__
+*.lock
