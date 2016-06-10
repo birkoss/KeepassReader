@@ -1,6 +1,8 @@
 How to use
 ----------
 
+* Install requirements: pip install -r requirements.txt
+
 * Import KeepassReader.py in your project
 
 * Create a KeepassReader object : reader = KeepassReader()
